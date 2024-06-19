@@ -6,7 +6,7 @@ on:
       - mainline
 
 env:
-  VERSION: "2.${GITHUB_RUN_NUMBER}.0"
+  version: "2.${GITHUB_RUN_NUMBER}.0"
 
 jobs:
   Git_Tag:
