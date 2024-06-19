@@ -19,7 +19,7 @@ jobs:
       - name: Git Tag
         id: new-code-base-tag
         run: |
-          tag=${env.VERSION}
+          tag=${{ env.version }}
           echo "Tag: $tag"
           git tag $tag
           git push --tags
@@ -31,7 +31,7 @@ jobs:
           cd source_repo
           git remote -v
           git checkout ${{ steps.determine-source-branch-ref.outputs.branch_ref }}
-          tag=${env.VERSION}
+          tag=${{ env.version }}
           echo "Tag: $tag"
           git tag $tag
           git push origin $tag
