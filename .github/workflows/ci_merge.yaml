@@ -99,7 +99,7 @@ jobs:
         id: new-code-base-tag
         run: |
           pwd
-          tag=${{  steps.determine-tag.outputs.version }}
+          tag=${{ steps.determine-tag.outputs.version }}
           echo "Tag: $tag"
           git tag $tag
           git push --tags
