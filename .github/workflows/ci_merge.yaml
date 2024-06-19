@@ -96,6 +96,8 @@ jobs:
 
       - name: Git Tag Source repo
         id: new-source-base-tag
+        env:
+          PAT: ${{ secrets.PAT }}
         run: |
           pwd
           tag=${{ steps.determine-tag.outputs.version }}
