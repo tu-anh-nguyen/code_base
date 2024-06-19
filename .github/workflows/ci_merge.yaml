@@ -46,10 +46,6 @@ jobs:
           fi
 
       # - name: Git Tag
-      #   uses: glcp/ccs-automation/ci_cd_commons/tag_git_new@v3
-      #   id: new-code-base-tag
-      #   with:
-      #     version: ${{ steps.determine-tag.outputs.version }}
 
       - name: Determine source branch ref
         id: determine-source-branch-ref
@@ -86,18 +82,15 @@ jobs:
             exit 1
           fi
 
-      # - name: Checkout source code
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: tu-anh-nguyen/source_repo
-      #     path: source
-      #     ref: ${{ steps.determine-source-branch-ref.outputs.branch_ref}}
+      - name: Checkout source code
+        uses: actions/checkout@v2
+        with:
+          repository: tu-anh-nguyen/source_repo
+          path: source
+          ref: ${{ steps.determine-source-branch-ref.outputs.branch_ref}}
 
       # - name: Git Tag source
       #   id: new-source-tag
-      #   uses: glcp/ccs-automation/ci_cd_commons/tag_git_new@v3
-      #   with:
-      #     version: ${{ steps.determine-tag.outputs.version }}
       # working-directory: source
 
     outputs:
