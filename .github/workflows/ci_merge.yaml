@@ -96,13 +96,13 @@ jobs:
           ref: ${{ steps.determine-source-branch-ref.outputs.branch_ref}}
 
       - name: Git Tag Source repo
-        id: new-code-base-tag
+        id: new-source-base-tag
         run: |
           pwd
-          # tag=${{ steps.determine-tag.outputs.version }}
-          # echo "Tag: $tag"
-          # git tag $tag
-          # git push --tags
+          tag=${{ steps.determine-tag.outputs.version }}
+          echo "Tag: $tag"
+          git tag $tag
+          git push --tags
         working-directory: source
 
     outputs:
