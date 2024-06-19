@@ -86,6 +86,7 @@ jobs:
             echo "Invalid branch name format."
             exit 1
           fi
+          cd ..
 
       - name: Checkout source code
         uses: actions/checkout@v2
