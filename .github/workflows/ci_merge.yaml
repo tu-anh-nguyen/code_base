@@ -45,7 +45,13 @@ jobs:
               exit 1
           fi
 
-      # - name: Git Tag
+      - name: Git Tag
+        id: new-code-base-tag
+        run: |
+          tag=${{  steps.determine-tag.outputs.version }}
+          echo "Tag: $tag"
+          git tag $tag
+          git push --tags
 
       - name: Determine source branch ref
         id: determine-source-branch-ref
@@ -89,9 +95,15 @@ jobs:
           path: source
           ref: ${{ steps.determine-source-branch-ref.outputs.branch_ref}}
 
-      # - name: Git Tag source
-      #   id: new-source-tag
-      # working-directory: source
+      - name: Git Tag
+        id: new-code-base-tag
+        run: |
+          pwd
+          tag=${{  steps.determine-tag.outputs.version }}
+          echo "Tag: $tag"
+          git tag $tag
+          git push --tags
+      working-directory: source
 
     outputs:
       tag: ${{ steps.new-tag.outputs.gittag }}
