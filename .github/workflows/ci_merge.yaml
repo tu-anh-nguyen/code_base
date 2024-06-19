@@ -101,15 +101,15 @@ jobs:
           SECOND_REPO_PAT: ${{ secrets.SECOND_REPO_PAT }}
         run: |
           git clone https://x-access-token:${{ secrets.SECOND_REPO_PAT }}@github.com/tu-anh-nguyen/source_repo.git
-          cd second_repo
+          ls
           git remote -v
           pwd
-          git checkout ${{ steps.determine-source-branch-ref.outputs.branch_ref }}
-          tag=${{ steps.determine-tag.outputs.version }}
-          echo "Tag: $tag"
-          # git remote add second_repo https://github-actions:${{ secrets.SECOND_REPO_PAT }}@github.com/tu-anh-nguyen/source_repo.git
-          git tag $tag
-          git push origin $tag
+          # git checkout ${{ steps.determine-source-branch-ref.outputs.branch_ref }}
+          # tag=${{ steps.determine-tag.outputs.version }}
+          # echo "Tag: $tag"
+          # # git remote add second_repo https://github-actions:${{ secrets.SECOND_REPO_PAT }}@github.com/tu-anh-nguyen/source_repo.git
+          # git tag $tag
+          # git push origin $tag
         working-directory: source
 
     outputs:
