@@ -5,10 +5,8 @@ on:
     branches:
       - dev
 
-# on: [push]
 
 env:
-  SECOND_REPO: ''
 
 jobs:
   Git_Tag:
