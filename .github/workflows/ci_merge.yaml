@@ -103,7 +103,7 @@ jobs:
           echo "Tag: $tag"
           git tag $tag
           git push --tags
-      working-directory: source
+        working-directory: source
 
     outputs:
       tag: ${{ steps.new-tag.outputs.gittag }}
