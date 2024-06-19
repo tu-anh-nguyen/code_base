@@ -103,7 +103,7 @@ jobs:
           git remote add second_repo https://github-actions:${{ secrets.PAT }}@github.com/tu-anh-nguyen/source_repo.git
           git tag $tag
           git remote --v
-          git push second_repo --tags
+          git push second_repo tag
         working-directory: source
 
     outputs:
