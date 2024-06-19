@@ -7,7 +7,7 @@ on:
 
 
 env:
-  SECOND_REPO: ''
+  SECOND_REPO: 'test'
 
 jobs:
   Git_Tag:
