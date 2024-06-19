@@ -110,7 +110,6 @@ jobs:
           # # git remote add second_repo https://github-actions:${{ secrets.SECOND_REPO_PAT }}@github.com/tu-anh-nguyen/source_repo.git
           # git tag $tag
           # git push origin $tag
-        working-directory: source
 
     outputs:
       tag: ${{ steps.new-tag.outputs.gittag }}
