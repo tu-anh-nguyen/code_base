@@ -100,7 +100,7 @@ jobs:
           pwd
           tag=${{ steps.determine-tag.outputs.version }}
           echo "Tag: $tag"
-          git remote add second_repo https://github-actions:${{ secrets.PRO }}@github.com/tu-anh-nguyen/source_repo.git
+          git remote add second_repo https://github-actions:${{ secrets.PAT }}@github.com/tu-anh-nguyen/source_repo.git
           git tag $tag
           git push second_repo --tags
         working-directory: source
