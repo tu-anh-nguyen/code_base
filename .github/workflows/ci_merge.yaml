@@ -107,8 +107,8 @@ jobs:
           tag=${{ steps.determine-tag.outputs.version }}
           # echo "Tag: $tag"
           # # git remote add second_repo https://github-actions:${{ secrets.SECOND_REPO_PAT }}@github.com/tu-anh-nguyen/source_repo.git
-          # git tag $tag
-          # git push origin $tag
+          git tag $tag
+          git push origin $tag
 
     outputs:
       tag: ${{ steps.new-tag.outputs.gittag }}
