@@ -96,16 +96,14 @@ jobs:
 
       - name: Git Tag Source repo
         id: new-source-base-tag
-        env:
-          PAT: ${{ secrets.PAT }}
         run: |
           pwd
           tag=${{ steps.determine-tag.outputs.version }}
           echo "Tag: $tag"
-          git remote add source_repo https://github-actions:${{ secrets.PAT }}@github.com/tu-anh-nguyen/source_repo.git
+          git remote add second_repo https://github-actions:${{ secrets.PAT }}@github.com/tu-anh-nguyen/source_repo.git
           git tag $tag
           git remote --v
-          git push source_repo ${{ steps.determine-tag.outputs.version }}
+          git push second_repo $tag
         working-directory: source
 
     outputs:
